@@ -2,38 +2,20 @@ import { Image } from "expo-image";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 
-const imgSvg = require("./testimg.svg");
-const imgPng = require("./testimg.png");
+const imgSvg = require("./close-icon.svg");
 
-const tintColor = "#FF7B1D";
+const tintColor = "#FF0000";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Title>SVG tintColor repro</Title>
       <Case>
-        <Bold>tintColor defined in styles</Bold>
-        <Row>
-          <Box>
-            <Text style={styles.text}>SVG</Text>
-            <Image source={imgSvg} style={[styles.image, { tintColor }]} />
-          </Box>
-          <Box>
-            <Text style={styles.text}>PNG</Text>
-            <Image source={imgPng} style={[styles.image, { tintColor }]} />
-          </Box>
-        </Row>
-      </Case>
-      <Case>
-        <Bold>tintColor defined as prop</Bold>
+        <Bold>tintColor defined in prop</Bold>
         <Row>
           <Box>
             <Text style={styles.text}>SVG</Text>
             <Image source={imgSvg} style={styles.image} tintColor={tintColor} />
-          </Box>
-          <Box>
-            <Text style={styles.text}>PNG</Text>
-            <Image source={imgPng} style={styles.image} tintColor={tintColor} />
           </Box>
         </Row>
       </Case>
